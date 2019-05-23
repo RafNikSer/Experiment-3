@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+
+	int main()
+	{
+		double grp[10];
+		int input, sum=0, a, b, c;
+		
+		cout << "Enter the 10 digits: ";
+		
+		for (a=0;a<10;a++)
+		{
+			cin >> grp[a];
+			sum = sum + grp[a];
+		}
+		
+		for (a=0;a<10;a++)
+		{
+			for (b=a+1;b<10;b++)
+			{
+				if (grp[a]>grp[b])
+				{
+					c = grp[a];
+					grp[a] = grp[b];
+					grp[b] = c;
+				}
+			}
+		}
+		
+		cout << "The smallest integer is: " << grp[0] << '\n';
+		cout << "The largest integer is: " << grp[9] << '\n';
+		cout << "Sum: " << sum << '\n';
+		cout << "Average: " << (sum/10);
+		return 0;
+	}
